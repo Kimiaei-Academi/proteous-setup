@@ -21,5 +21,14 @@
 
 اگر جایی گیر کردی، از صفحه‌ات عکس بگیر و برای آکادمی بفرست.
 
+## نسخه‌ی Codex (ChatGPT)
+اگر به‌جای Claude از **Codex** (اپ ChatGPT، Codex CLI یا افزونه‌ی ویرایشگر) استفاده می‌کنی، همان قدم‌ها را برو، فقط در Codex این پیام را بفرست:
+
+```
+دستیار PROTEOUS کیمیائی آکادمی رو برام نصب کن. راهنمای نصب: https://raw.githubusercontent.com/Kimiaei-Academi/proteous-setup/main/CODEX.md
+```
+
+هر بار Codex اجازه خواست، تأیید کن. آخر کار Codex را کامل ببند و باز کن و بنویس «سلام».
+
 ---
 © KIMIAEI ACADEMI
