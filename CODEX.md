@@ -11,12 +11,12 @@
 - Change nothing on the computer beyond these steps.
 
 ## Constants
-- Private repository: `Kimiaei-Academi/proteous` (the student must be invited by the academy)
-- Kit checkout: `~/.agents/proteous-kit` (Windows: `$HOME\.agents\proteous-kit`)
+- Private repository: `Kimiaei-Academi/proteous-codex` (the Codex edition; the student must be invited to it by the academy)
+- Kit checkout: `~/.agents/proteous-codex` (Windows: `$HOME\.agents\proteous-codex`)
 - Skills folder: `~/.agents/skills`; Codex instructions: `~/.codex/AGENTS.md` (or `$CODEX_HOME/AGENTS.md`)
 
 ## Step 1: already installed?
-If `~/.agents/skills/proteous/SKILL.md` exists and `~/.agents/proteous-kit` is a git checkout, run `git -C ~/.agents/proteous-kit pull --ff-only` and `node ~/.agents/proteous-kit/codex/sync.mjs`, then go to step 6.
+If `~/.agents/skills/proteous/SKILL.md` exists and `~/.agents/proteous-codex` is a git checkout, run `git -C ~/.agents/proteous-codex pull --ff-only` and `node ~/.agents/proteous-codex/sync.mjs`, then go to step 6.
 
 ## Step 2: tools
 Check `git --version`, `gh --version` and `node --version` (Node 20 or newer). On Windows also try `C:\Program Files\Git\cmd\git.exe`, `C:\Program Files\GitHub CLI\gh.exe` and `C:\Program Files\nodejs\node.exe`, since PATH may not refresh in this session. Install only what is missing:
@@ -44,22 +44,22 @@ Then send exactly these steps and wait:
 
 The code expires after 15 minutes; if it does, open the window again. After «تموم شد»: confirm with `gh auth status`, then run `gh auth setup-git`.
 
-**Access check:** `gh api repos/Kimiaei-Academi/proteous --jq .full_name`.
+**Access check:** `gh api repos/Kimiaei-Academi/proteous-codex --jq .full_name`.
 - Works: go on.
-- Not found: list pending invitations with `gh api /user/repository_invitations --jq '.[] | [.id, .repository.full_name] | @tsv'`. Find the line with `Kimiaei-Academi/proteous`; its first column is the id.
+- Not found: list pending invitations with `gh api /user/repository_invitations --jq '.[] | [.id, .repository.full_name] | @tsv'`. Find the line with `Kimiaei-Academi/proteous-codex`; its first column is the id.
   - Found: accept it with `gh api -X PATCH /user/repository_invitations/<id>`, tell the user «دعوت آکادمی رو برات قبول کردم», and check access again.
   - None: show the signed-in name (`gh api user --jq .login`) and say: «هنوز دعوتی برای حساب `<name>` نیومده. این نام کاربری رو برای آکادمی بفرست. بعد از دعوت، پیام نصب آکادمی رو دوباره اینجا بفرست.» Stop.
 
 ## Step 4: download the kit
 Tell them first: «دانلود دستیار حدود ۷۵ مگابایته و ممکنه چند دقیقه طول بکشه.»
 Run with a command timeout of 10 minutes:
-`git clone --depth 1 https://github.com/Kimiaei-Academi/proteous.git ~/.agents/proteous-kit` (Windows: `"$HOME\.agents\proteous-kit"`).
+`git clone --depth 1 https://github.com/Kimiaei-Academi/proteous-codex.git ~/.agents/proteous-codex` (Windows: `"$HOME\.agents\proteous-codex"`).
 - Timed out or connection error: try once more; if it fails again, tell them to turn on or change their VPN and write «دوباره».
 - `Filename too long`: run `git config --global core.longpaths true`, delete the half-made folder, and try again.
 - Authentication or `not found`: go back to the access check.
 
 ## Step 5: install the skills
-Run `node ~/.agents/proteous-kit/codex/sync.mjs` (Windows: `node "$HOME\.agents\proteous-kit\codex\sync.mjs"`). It copies the skills into `~/.agents/skills` and adds the PROTEOUS block to `~/.codex/AGENTS.md`, leaving everything else in that file as it was. It must end with `PROTEOUS <version> is ready for Codex`.
+Run `node ~/.agents/proteous-codex/sync.mjs` (Windows: `node "$HOME\.agents\proteous-codex\sync.mjs"`). It copies the skills into `~/.agents/skills` and adds the PROTEOUS block to `~/.codex/AGENTS.md`, leaving everything else in that file as it was. It must end with `PROTEOUS <version> is ready for Codex`.
 
 ## Step 6: finish
 Check that `~/.agents/skills/proteous/SKILL.md` exists. Then send:
