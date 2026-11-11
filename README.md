@@ -30,5 +30,12 @@
 
 هر بار Codex اجازه خواست، تأیید کن. آخر کار Codex را کامل ببند و باز کن و بنویس «سلام».
 
+## نسخه‌ی Gemini و Antigravity
+اگر از **Antigravity** (اپ یا CLI) یا **Gemini CLI** استفاده می‌کنی، همان قدم‌ها را برو، فقط این پیام را بفرست:
+
+```
+دستیار PROTEOUS کیمیائی آکادمی رو برام نصب کن. راهنمای نصب: https://raw.githubusercontent.com/Kimiaei-Academi/proteous-setup/main/GEMINI-INSTALL.md
+```
+
 ---
 © KIMIAEI ACADEMI
